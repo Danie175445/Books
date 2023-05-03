@@ -1,5 +1,7 @@
 package com.daniel.books.controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,5 +26,12 @@ public class BookController {
 			
 			return "index.jsp";
 		}
+		
+		@RequestMapping("/books")
+	    public String index(Model model) {
+	        ArrayList<Book> books = bookService.allBooks();
+	        model.addAttribute("books", books);
+	        return "books.jsp";
+	    }
 
 }

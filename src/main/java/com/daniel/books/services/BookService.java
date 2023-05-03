@@ -1,6 +1,6 @@
 package com.daniel.books.services;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
     // returns all the books
-    public List<Book> allBooks() {
+    public ArrayList<Book> allBooks() {
         return bookRepository.findAll();
     }
     // creates a book
